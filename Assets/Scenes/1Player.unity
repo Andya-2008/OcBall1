@@ -1947,8 +1947,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720475105}
-  - component: {fileID: 720475106}
   - component: {fileID: 720475107}
+  - component: {fileID: 720475106}
   m_Layer: 0
   m_Name: BallLength
   m_TagString: Untagged
@@ -1979,7 +1979,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 720475104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75d3193064fedf44c945292330e120d3, type: 3}
+  m_Script: {fileID: 11500000, guid: b7df3b01c508f1a41ab5233e32adfe9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &720475107
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sphere1: {fileID: 157163551}
   Sphere2: {fileID: 557950970}
-  changeAmount: 0.1
+  changeAmount: 0.05
 --- !u!1 &727745751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,7 +2509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Powerups:
-  - {fileID: 720475106}
+  - {fileID: 0}
 --- !u!1 &1001826093
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class BallLength__Power : MonoBehaviour
     public void OnEnable()
     {
         Sphere1.localScale += new Vector3(changeAmount,changeAmount,changeAmount);
-        this.GetComponent<Power>().DoneWithPower();
+        Sphere2.localScale += new Vector3(changeAmount, changeAmount, changeAmount);
+        this.gameObject.GetComponent<PowerScript>().DoneWithPower();
     }
 }

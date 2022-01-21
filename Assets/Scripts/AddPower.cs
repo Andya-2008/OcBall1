@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddPower : MonoBehaviour
 {
     int PowerNum = 0;
-    [SerializeField] List<Power> Powerups = new List<Power>();
+    [SerializeField] List<PowerScript> Powerups = new List<PowerScript>();
     bool randomBool = true;
     // Start is called before the first frame update
     void Start()
