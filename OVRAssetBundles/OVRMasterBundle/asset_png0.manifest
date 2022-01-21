@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2240347340
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 31a63059c00384715e07383741aaacb6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e6e651bdddca608c77d51fff2e12d033
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/MeterGrid.png
+- Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-6.png
+- Assets/Oculus/VR/Textures/Black.png
+Dependencies: []

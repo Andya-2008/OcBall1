@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 800161588
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 217655756abd6fe8dacbd59548d2b00e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 68c985bf88fecc38b460cdb825182138
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Shaders/TriPlanarWorld.shader
+- Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+Dependencies: []

@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 3692756281
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: af87bc1d3e99e74e6ff3317109841b9a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 41f5e68da31a4f6b36e45572326352d3
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/New Material 5.mat
+- Assets/Materials/New Material.mat
+- Assets/Materials/New Material 1.mat
+- Assets/Materials/New Material 4.mat
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/TriPlanarWorld.mat
+- Assets/Materials/New Material 3.mat
+- Assets/Materials/New Material 2.mat
+- Assets/8K Skybox Pack Free/Skyboxes/Material/sky-6.mat
+- Assets/Materials/New Material 6.mat
+- Assets/Oculus/SampleFramework/Core/CustomHands/Materials/Hands_solid.mat
+Dependencies:
+- D:/Games/1P OcBall/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/Games/1P OcBall/OVRAssetBundles/OVRMasterBundle/asset_shader0
