@@ -11,9 +11,11 @@ public class deathToBall : MonoBehaviour
     [SerializeField] bool PowerBallBool;
     DeathPointCounter DeathWall;
     Transform SpawnpointZ;
+    public bool NoDeathPoint = false;
     //TextMeshProUGUI dbgText;
     ScoreHandler shandler;
     bool isActive=true;
+    public int score = 200;
     
     // Start is called before the first frame update
     void Start()
@@ -34,8 +36,11 @@ public class deathToBall : MonoBehaviour
             {
                 if (!PowerBallBool)
                 {
-                    GameObject.Find("DeathWall").GetComponent<DeathPointCounter>().AddPoint();
-                    GameObject.Find("GameManager").GetComponent<ScoreHandler>().streakNum = 0;
+                    if (!NoDeathPoint)
+                    {
+                        GameObject.Find("DeathWall").GetComponent<DeathPointCounter>().AddPoint();
+                        GameObject.Find("GameManager").GetComponent<ScoreHandler>().streakNum = 0;
+                    }
                 }
 
                 isActive = false;
@@ -51,7 +56,7 @@ public class deathToBall : MonoBehaviour
                 if (!HybridBallBool)
                 {
                     isActive = false;
-                    GameObject.Find("GameManager").GetComponent<ScoreHandler>().addScore(200);
+                    GameObject.Find("GameManager").GetComponent<ScoreHandler>().addScore(score);
                     GameObject.Find("GameManager").GetComponent<ScoreHandler>().streakNum += 1;
                     Destroy(this.gameObject);
                     if(PowerBallBool)

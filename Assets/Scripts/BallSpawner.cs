@@ -7,11 +7,12 @@ public class BallSpawner : MonoBehaviour
 {
     [SerializeField] GameObject HybridBall;
     [SerializeField] GameObject Ball;
+    [SerializeField] GameObject deathCube;
     [SerializeField] GameObject PowerBall;
 
     Transform BallParent;
 
-    [SerializeField] float SpawnInterval=10;
+    [SerializeField] public float SpawnInterval=10;
     float lastBallCreatedTime = 0;
     float MaxBallSpeed = 2f;
 
@@ -29,17 +30,22 @@ public class BallSpawner : MonoBehaviour
     float speed;
     TextMeshProUGUI SpeedText;
     DeathBallMoveThroughAir deathBallMoveThroughAir;
+    DeathBallMoveThroughAir deathCubeMoveThroughAir;
     [SerializeField] int TimerCheck;
-    public bool highpointbool;
-
+    public bool highpointbool = false;
+    public bool deathCubeBool =false;
     public float maxHeight = 3.4f;//Medium by default, although this should never happen
-
+    GameObject instantiateBall;
+    [SerializeField] ScoreBallRelease scoreBallRelease;
+    [SerializeField] float cubeSpeed;
+    bool AlreadyResetTimer = false;
+    bool AlreadyactiveSelf=false;
     // Start is called before the first frame update
     void Start()
     {
         deathBallMoveThroughAir = Ball.GetComponent<DeathBallMoveThroughAir>();
+        deathCubeMoveThroughAir = deathCube.GetComponent<DeathBallMoveThroughAir>();
         
-        startTime = Time.time;
         SpawnPointZ = GameObject.Find("SpawnPointZ").GetComponent<Transform>();
         BallParent = GameObject.Find("Balls").GetComponent<Transform>();
         SpeedText = GameObject.Find("SpeedText").GetComponent<TextMeshProUGUI>();
@@ -64,6 +70,11 @@ public class BallSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(this.gameObject.activeSelf && !AlreadyactiveSelf)
+        {
+            startTime = Time.time;
+            AlreadyactiveSelf = true;
+        }
         if (!highpointbool)
         {
             SpawnPointZ.position = new Vector3(Random.Range(-1.5f, 1.5f), Random.Range(1, maxHeight), SpawnPointZ.position.z);
@@ -84,35 +95,55 @@ public class BallSpawner : MonoBehaviour
         float timer = Time.time - startTime;
         if (timer > TimerCheck)
         {
+            
+            if (!deathCubeBool)
+            {
+                //Regular ball by default
+                instantiateBall = Ball;
+            }
+            else
+            {
+                //Regular ball by default
+                instantiateBall = deathCube;
+                if (!AlreadyResetTimer)
+                {
+                    startTime=Time.time;
+                    AlreadyResetTimer=true;
+                }
+                    deathCube.GetComponent<DeathCubeMoveBackAndForth>().speed = MaxBallSpeed * (1f - 1 / (Mathf.Exp(timer * cubeSpeed)));
+            }
+
+            scoreBallRelease.GetComponent<ScoreBallRelease>().BallObj = instantiateBall;
             if (Time.time - lastBallCreatedTime >= SpawnInterval)
             {
-
+                
                 SpawnInterval = minInterval + (startInterval - minInterval) / (Mathf.Exp((timer) * IntervalC));
                 lastBallCreatedTime = Time.time;
-                GameObject newBall = Instantiate(Ball, SpawnPointZ.position, Quaternion.identity);
+                GameObject newBall = Instantiate(instantiateBall, SpawnPointZ.position, Quaternion.identity);
                 newBall.transform.SetParent(BallParent);
                 speed = MaxBallSpeed * (1f - 1 / (Mathf.Exp(timer * SpeedC)));
                 SpeedText.text = "Speed: " + Mathf.Round(speed * 20).ToString();
-                //newBall.GetComponent<DeathBallMoveThroughAir>().speed = speed;
-
+                newBall.GetComponent<DeathBallMoveThroughAir>().speed = speed;
+                
             }
-
-            if (Time.time - lastHybridBallCreatedTime >= HybridSpawnInterval)
+            else if (Time.time - lastPowerBallCreatedTime >= PowerBallSpawnInterval)
             {
-                lastHybridBallCreatedTime = Time.time;
-                GameObject newHybridBall = Instantiate(HybridBall, SpawnPointZ.position, Quaternion.identity);
-                newHybridBall.transform.SetParent(BallParent);
-
-
-            }
-            if (Time.time - lastPowerBallCreatedTime >= PowerBallSpawnInterval)
-            {
+                Debug.Log("Powerball instantiated!");
                 lastPowerBallCreatedTime = Time.time;
                 GameObject newPowerBall = Instantiate(PowerBall, SpawnPointZ.position, Quaternion.identity);
                 newPowerBall.transform.SetParent(BallParent);
 
 
             }
+                else if (Time.time - lastHybridBallCreatedTime >= HybridSpawnInterval)
+                {
+                    lastHybridBallCreatedTime = Time.time;
+                    GameObject newHybridBall = Instantiate(HybridBall, SpawnPointZ.position, Quaternion.identity);
+                    newHybridBall.transform.SetParent(BallParent);
+
+
+                }
+            
         }
         deathBallMoveThroughAir.speed = speed;
 

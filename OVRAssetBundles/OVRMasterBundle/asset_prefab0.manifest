@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1322753994
+CRC: 2077008712
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aa8f8c6f7edb7f39cd1e414610403c3d
+    Hash: 7d0dfd8119e1526c94599aaabaf7cbc6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4a9b0ac4c6a0e011354571092e695d53
+    Hash: a2c3fa2aff8b23e145bc4de782bf8615
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,6 +24,8 @@ ClassTypes:
 - Class: 54
   Script: {instanceID: 0}
 - Class: 64
+  Script: {instanceID: 0}
+- Class: 65
   Script: {instanceID: 0}
 - Class: 82
   Script: {instanceID: 0}
@@ -49,6 +51,12 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 11b6ee9239438d547b8ba6828c108146, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ef08395b74842c34d81d5c8ae483353f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a59203bf092119b42a0f17f4e0d10cdc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 87f9e693ca9b6d04c9573d765af2db5e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7b5d9327eb6adb14cb98ec1d86dc91d0, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 135
@@ -64,7 +72,10 @@ Assets:
 - Assets/Oculus/SampleFramework/Core/DistanceGrab/Prefabs/DistanceGrabHandLeft.prefab
 - Assets/Prefabs/HybridBall.prefab
 - Assets/Oculus/SampleFramework/Core/DistanceGrab/Prefabs/DistanceGrabHandRight.prefab
+- Assets/Prefabs/Sphere.prefab
+- Assets/Prefabs/DeathCube.prefab
 - Assets/Prefabs/DeathBall.prefab
+- Assets/Prefabs/PlayerBall.prefab
 Dependencies:
 - D:/Games/1P OcBall/OVRAssetBundles/OVRMasterBundle/asset_asset0
 - D:/Games/1P OcBall/OVRAssetBundles/OVRMasterBundle/asset_controller0

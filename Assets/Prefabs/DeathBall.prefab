@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8370018288289142611
 Transform:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaae28afc1130d45acb9e5a04476915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.20258917
+  speed: 0.33978486
   ConstantSpeedBool: 0
 --- !u!23 &7544268734709970939
 MeshRenderer:
@@ -143,6 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HybridBallBool: 0
   PowerBallBool: 0
+  NoDeathPoint: 0
+  score: 250
 --- !u!82 &752500480
 AudioSource:
   m_ObjectHideFlags: 0

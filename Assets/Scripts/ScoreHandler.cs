@@ -14,6 +14,7 @@ public class ScoreHandler : MonoBehaviour
     public int streakNum;
     public int newStreakNum;
     public bool streakBool = false;
+    [SerializeField] BallSpawner GameManager2;
     public void Start()
     {
         newStreakNum = 20;
@@ -57,10 +58,19 @@ public class ScoreHandler : MonoBehaviour
                 sDPT.GetComponent<textGoDownScreen>().scrollon = true;
             }
         }
-            if (score > 20000)
+            if (score >= 30000)
         {
             GameObject.Find("GameManager").GetComponent<BallSpawner>().highpointbool = true;
         }
+            if(score >= 10000  && score <20000)
+        {
+            GameObject.Find("GameManager").GetComponent<BallSpawner>().deathCubeBool = true;
+        }
+            else if(score >= 20000)
+            {
+                GameObject.Find("GameManager").GetComponent<BallSpawner>().deathCubeBool = false;
+                GameManager2.gameObject.SetActive(true);
+            }
         if (streakNum >= 2)
         {
             if (!AlreadyFaded)

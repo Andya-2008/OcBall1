@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaae28afc1130d45acb9e5a04476915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.25
   ConstantSpeedBool: 0
 --- !u!54 &3095776210272308482
 Rigidbody:
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HybridBallBool: 0
   PowerBallBool: 1
+  NoDeathPoint: 0
+  score: 200
 --- !u!82 &471619827755453351
 AudioSource:
   m_ObjectHideFlags: 0

@@ -12,6 +12,13 @@ public class AddPower : MonoBehaviour
     {
         
     }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            AddThePower("");
+        }
+    }
 
     public void AddThePower(string power)
     {
